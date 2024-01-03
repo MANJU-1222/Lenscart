@@ -1,0 +1,213 @@
+
+
+  /* .slick-slide > div {
+    margin: 0 40px;
+  } */
+  
+  .card {
+    overflow: hidden;
+    color: #fff;
+    cursor: pointer;
+  }
+  .card-top > img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .card-bottom {
+    margin-top: 10px;
+  }
+  .aua{
+    line-height: 22px;
+    color:#606060;
+    font-size: 14px;
+    font-family: "LKFuturaStd-Book";
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.arrw{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 4px;
+    background-color:white;
+    padding: 10px 10px;
+    box-shadow: 2px #ccc;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+}
+
+.arleft{
+    left: 0px;
+}
+
+  .arright {
+    
+     right: 0px;
+  } 
+  .recent{
+    font-size: 16px;
+    margin-top:6%;
+    margin-bottom: 7%;
+    font-family: "LKSans-Regular";
+    color:#000042;
+}
+
+
+
+
+.zoomgl1 {
+  position: fixed;
+  top:-300px;
+  left: 15%;
+  width: 70%;
+  height: 450px;
+  background-color: white ;
+  border-radius: 5px;
+  z-index: 1200 !important;
+  box-shadow: 2px solid black   
+}
+.zoom-in {
+  transform: translatey(21rem);
+  transition: transform 0.3s ease-out; 
+}
+.zoom-out {
+  animation: circle 0.3s forwards; 
+  transform: translateY(-5.1rem);
+  transition: transform 1.5s ease-out; 
+}
+@keyframes circle{
+  0%    { opacity: 1; }
+  20%   { opacity: 0.75; }
+  50%   { opacity: 0.50; }
+  80%   {opacity :0.25;}
+  100%  { opacity: 0; }
+}
+
+.overlay {
+  position: fixed;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0,0,0,0.5); */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.7s;
+  transition-property: background-color;
+  transition-timing-function: ease-out;  
+  z-index: 99;
+  cursor: pointer;
+}
+
+/* .wrapper{
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+} */
+
+
+.imgr
+{
+  height: 55px;
+  width:55PX;
+}
+.imt{
+ 
+  padding-left:15px;
+  padding-right: 40px;
+  width: 99.9%
+ 
+}
+.imm{
+  cursor: pointer;
+  border:2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  
+}
+.selected{
+  border:2px solid rgb(15, 183, 147);
+}
+
+.slick-slide > div{
+  margin: 0 35px;
+}
+.container 
+{
+  /* width: 450px; */
+  width: 50%;
+  margin: 0 auto;
+  top: 80px;
+  position: relative;
+}
+@media screen and (max-width: 375px){
+  .imgr
+{
+  height:40px;
+  width:40PX;
+}
+/* .zoomgl1{
+  height: 250px;
+} */
+
+}
+.image {
+   width: 100%;
+   height: auto;
+}
+.arleft1{
+  left: 0px;
+  top: 25px;
+}
+
+.arright1{
+  top: 25px;
+   right: 0px;
+} 
+/* .lens {
+  display: none;
+  width: 40px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #999999;
+} */
+/* .result {
+  display: none;
+  position: absolute;
+  left: calc(100% + 50px);
+  top: 30px;
+  width: 320px;
+  height: 320px;
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 2;
+  background-color: white;
+} */
+.cross2
+{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width:13px;
+  height:13px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right:1.5%;
+  cursor: pointer;
+}
+
+

@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+}
+/* body{
+    width: 100%;
+} */
+
+.doo p{
+    text-align: left;
+    color: black;
+}
+@font-face {
+    font-family: "LKSans-Regular";
+    src: url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Regular.woff") format("woff"),
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Regular.otf") format("otf"),
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Regular.eot") format("eot"),
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Regular.ttf") format("ttf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LKFuturaStd-Book";
+    src: url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Book.woff") format("woff"),
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Book.otf") format("otf"),
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Book.eot") format("eot"),
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Book.ttf") format("ttf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LKFuturaStd-Heavy";
+    src: url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Heavy.woff") format("woff"),
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Heavy.otf") format("otf"),
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Heavy.eot") format("eot"),
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Heavy.ttf") format("ttf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "LKSans-Bold";
+    src: url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Bold.woff") format("woff"),
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Bold.otf") format("otf"),
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Bold.eot") format("eot"),
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Bold.ttf") format("ttf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face { font-family: "LKSans-Medium";
+    src: url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Medium.woff") format("woff"), 
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Medium.otf") format("otf"),
+     url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Medium.eot") format("eot"), 
+     url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Medium.ttf") format("ttf"); 
+     font-style: normal; font-weight: normal; font-display: swap; 
+}
+@font-face { font-family: "LKFuturaStd-Medium"; 
+    src: url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Medium.woff") format("woff"), 
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Medium.otf") format("otf"), 
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Medium.eot") format("eot"), 
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Medium.ttf") format("ttf");
+     font-style: normal; font-weight: normal; font-display: swap; 
+}
+     
+/* LenskartSans-Hairline */
+/* @font-face {
+	font-family:'LenskartSans-Hairline';
+	font-style:normal;
+	font-weight:normal;
+	src:local('☺'), url("LenskartSans-Hairline.woff") format("woff2");
+} */
+
+@font-face { font-family: "LKSans-Hairline"; 
+    src: url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Hairline.woff") format("woff"), 
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Hairline.otf") format("otf"), 
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Hairline.eot") format("eot"), 
+    url("https://static.lenskart.com/fonts/fonts/ds/lksans/LenskartSans-Hairline.ttf") format("ttf"); 
+    font-style: normal; font-weight: normal; font-display: swap; 
+}
+
+/* LKFuturaStd-Light */
+@font-face { font-family: "LKFuturaStd-Light"; 
+    src: url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Light.woff") format("woff"), 
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Light.ttf") format("truetype"), 
+    url("https://static.lenskart.com/media/wysiwyg/futura-fonts/FuturaStd-Light.svg") format("svg"); 
+    font-style: normal; font-weight: normal; font-display: swap; 
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    background-color: white;
+}
+
+.h1 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.h11 {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.h11 a{
+    color: #000042;
+    font-size: 10px;
+    margin-top: 0px;
+    text-decoration: none;
+    font-family: "LKSans-Regular";
+}
+/* .h11 p {
+    cursor: pointer;
+    color: #000042;
+    font-size: 10px;
+    font-family: "LKSans-Regular";
+} */
+
+.bor {
+    border-left: 1px solid #000042;
+    padding-left: 8px;
+    margin-left: 8px;
+}
+
+.h12 p {
+    color: #000042;
+    font-size: 10px;
+    font-family: "LKSans-Regular";
+    cursor: pointer;
+}
+
+
+.h2 {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 40px;
+    justify-content: space-between;
+}
+
+.h21 {
+    display: flex;
+    align-items: center;
+}
+
+#phone {
+    width: 120px;
+    height: 35px;
+}
+
+.h22 {
+    width: 100%;
+    height: 100%;
+    margin-left: 2%;
+}
+
+.search {
+    width: 100%;
+    height: 22px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 66, 0.5);
+    font-size: 14px;
+    color: rgba(0, 0, 66, 0.5);
+    font-family: "LKSans-Regular";
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid rgba(0, 0, 66, 0.5);
+}
+
+@media (max-width: 1520px) {
+    .h23 {
+        width: 390px;
+    }
+}
+
+.h23 {
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* background-color: #8b8b8b; */
+}
+
+.h23 a {
+    font-size: 12px;
+    font-family: "LKSans-Regular";
+    color: #000042;
+    text-decoration: none;
+}
+
+.ss {
+    font-size: 12px;
+    font-family: "LKSans-Regular";
+    color: #000042;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.h23-alt{
+    display: none;
+}
+
+
+
+.types {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    height: 60px;
+    align-items: center;
+
+}
+
+.type1 {
+    margin-left: 10px;
+    height: 20px;
+    /* background-color: aqua; */
+    color: #000042;
+    cursor: pointer;
+    font-family: "LKSans-Bold";
+    letter-spacing: 0.01em;
+    font-size: 13px;
+}
+
+.bt img {
+    width: 50px;
+    border-radius: 5px;
+    margin-left: 4px;
+}
+
+.h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(251, 249, 247);
+}
+
+@media screen and (max-width: 880px) {
+    .h11 {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(8, auto);
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .h11 {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(5, auto);
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .h11 {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .h11 {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .h11 {
+        grid-auto-flow: row;
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 150px) {
+    .h11 {
+        grid-template-columns: auto;
+    }
+} 
+
+@media screen and (max-width: 1300px) {
+    .h22 {
+        max-width: 280px;
+    }
+    .search-con {
+        max-width: 275px;
+    }
+}
+
+@media screen and (max-width: 1579px) {
+    .h22 {
+        max-width: 370px;
+    }
+    .search-con {
+        max-width: 356px;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .h22 {
+        max-width: 273px !important
+    }
+    .search-con {
+        max-width: 260px;
+    }
+}
+@media screen and (max-width: 1035px) {
+    .types {
+        grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .types {
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+    .h3{
+        display: none;
+    }
+    #phone {
+        display: none;
+    }
+
+    .h23 {
+        display: none;
+    }
+
+    .h3 {
+        display: none;
+    }
+    .h1 {
+        padding-left: 10px;
+        padding-right:10px;
+    }
+    .h2 {
+        padding-left: 0px;
+        padding-right: 10px;
+        margin-left: 0px;
+        width: 100%;
+        justify-content:space-between;
+        height: 40px;
+        margin-top: 5px;
+    }
+   
+    #logo {
+        width: 150px;
+    }
+    .h22 {
+        width: 170px;
+        margin-left: 10px;
+    }
+
+    .search {
+        font-size: 8px;
+        height: 10px;
+        margin-top: 10px;
+        margin-left: -15px;
+    }
+    .h23-alt{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        width: 90px;
+        margin-right: 10px;
+    }
+    .menu{
+        width: 1.5em;
+        height: 1.5em;
+    }
+   
+
+}
+
+
+
+
