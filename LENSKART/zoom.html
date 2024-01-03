@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Draggable Image Slider | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <style>
+.zoomgl1{
+  /* text-align: center; */
+  width: 70%;
+  height: 450px;
+  background-color: aqua;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+/* sliding image */
+.wrapper{
+  display: flex;
+  max-width: 86.5%;
+  position: relative;
+  margin: 0 auto;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 0.7rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  /* transform: translateY(-50%); */
+  /* transition: transform 0.1s linear; */
+}
+
+.wrapper i:first-child{
+  right: 101%;
+}
+.wrapper i:last-child{
+  left: 101%;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  /* transition: transform 10s linear; */
+  /* transition-duration: 1s; */
+  display: flex;
+  /* transition-duration: 10s; */
+  
+}
+.carousel
+{
+    transition-duration: 10s;
+}
+.carousel img
+{
+  height: 55px;
+  width:55PX;
+  cursor: pointer;
+}
+
+.im{
+    padding: 10px;
+    border: 2px solid black;
+    margin-left: 4.7%;
+    border-radius: 10%;
+    /* transition-duration: 1000s;  */
+}
+
+/* zoom */
+.container {
+            width: 450px;
+            margin: 0 auto;
+            top: 80px;
+            position: relative;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+        }
+
+        .lens {
+            display: none;
+            width: 40px;
+            height: 23px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid #333;
+            /* cursor: crosshair; */
+        }
+
+        .result {
+            display: none;
+            position: absolute;
+            left: calc(100% + 50px);
+            top: 30px;
+            width: 320px;
+            height: 320px;
+            border: 1px solid black;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            z-index: 1;
+            background-color: white;
+        }
+  .cross
+  {
+      /* background-color: #FFFFFF; */
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      padding: 8px;
+      width:20px;
+      height:20px;
+      border-radius: 50%;
+      position: absolute;
+      top: 55px;
+      right:16%;
+      cursor: pointer;
+  }
+
+  </style>
+  </head>
+  <body>
+    <div class="zoomgl1">
+      <div class="cross" id="close2" onclick="closePopup2()"> 
+        <svg width="1em" height="1em" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="m1.064 18.593 8.133-8.114 8.13 8.114 1.007-1.006-8.133-8.113 8.133-8.111L17.327.358l-8.13 8.114L1.064.358.057 1.363l8.132 8.11-8.132 8.114 1.007 1.006Z" fill="currentColor"></path>
+       </svg>
+     </div>
+          <div style="height: 360px;">
+            <div class="container">
+                  <img class="image" src="z1.jpg" />
+                  <div class="lens"></div>
+                  <div class="result"></div>
+            </div>
+          </div>
+          <div>
+            <div class="wrapper">
+              <i id="left" class="fa-solid fa-angle-left"></i>
+              <div class="carousel" >
+                <!-- <div class="im" id="im1" style="margin-left: 0px;"><img src="fashion2.webp" alt="img" draggable="false"> </div> -->
+                <div class="im" id="im1" style="margin-left: 0px;"><img src="s1.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im2"><img src="s2.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im3"><img src="s3.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im4"><img src="s4.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im5"><img src="s5.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im6"><img src="s6.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im7"><img src="s7.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im8"><img src="s8.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im9"><img src="s9.jpg" alt="img" draggable="false"> </div>
+                <div class="im" id="im10"><img src="s10.jpg" alt="img" draggable="false"> </div>
+              </div>
+              <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+    </div>
+  </body>
+
+<script>
+
+// sliding
+const carousel = document.querySelector(".carousel");
+const firstImg = carousel.querySelectorAll(".im")[0];
+const arrowIcons = document.querySelectorAll(".wrapper i");
+const scrollAmount = 115; // Adjust this value for scroll speed
+
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        // let firstImgWidth = firstImg.clientWidth + 40;
+        if (icon.id === "left") {
+            carousel.scrollLeft -= scrollAmount;
+        } else {
+            carousel.scrollLeft += scrollAmount;
+        }
+    });
+});
+
+
+// zoom
+const container = document.querySelector(".container");
+const image = document.querySelector(".image");
+const lens = document.querySelector(".lens");
+const result = document.querySelector(".result");
+
+container.addEventListener("mouseenter", (e) => {
+        // zoomImage(e);
+      lens.style.display='block';
+      result.style.display="block";
+       container.addEventListener("mousemove", zoomImage);
+});
+
+container.addEventListener("mouseleave", (e) => {
+      // zoomImage(e);
+      lens.style.display='none';
+      result.style.display="none";
+});
+
+result.style.backgroundImage = `url(${image.src})`;
+function zoomImage(e)
+{
+        const containerRect = container.getBoundingClientRect();
+        const imageRect = image.getBoundingClientRect();
+        const lensRect = lens.getBoundingClientRect();
+        const { x, y } = getMousePos(e, containerRect, lensRect);
+        lens.style.left = x + "px";
+        lens.style.top = y + "px";
+        // Adjust the zoom factor for more magnification
+        const zoomFactor = 2.5; // Increase this value for more zoom
+        // Calculate the position of the zoomed image
+        const zoomX = -(x * zoomFactor);
+        const zoomY = -(y * zoomFactor);
+        result.style.backgroundSize = `${imageRect.width * zoomFactor}px ${imageRect.height * zoomFactor}px`;
+        result.style.backgroundPosition = `${zoomX}px ${zoomY}px`;
+}
+
+function getMousePos(e, containerRect, lensRect) 
+{
+        let x = e.clientX - containerRect.left - lensRect.width / 2;
+        let y = e.clientY - containerRect.top - lensRect.height / 2;
+        let minX = 0;
+        let minY = 0;
+        let maxX = containerRect.width - lensRect.width;
+        let maxY = containerRect.height - lensRect.height;
+        if (x <= minX) {
+            x = minX;
+        } else if (x >= maxX) {
+            x = maxX;
+        }
+        if (y <= minY) {
+            y = minY;
+        } else if (y >= maxY) 
+        {
+            y = maxY;
+        }
+        return { x, y };
+}
+ 
+// image click
+
+const divElements = document.querySelectorAll(".im");
+
+divElements.forEach((divElement, index) => {
+  const imageUrl = `z${index + 1}.jpg`;
+  divElement.addEventListener("click", () => {
+    handleDivClick(divElement, imageUrl);
+  });
+});
+function zoom(images,src)
+{
+    images.src =src;
+    result.style.backgroundImage = `url(${images.src})`;
+}
+
+let selectedDiv = null;
+function handleDivClick(divElement, imageUrl) 
+{
+  if (selectedDiv) {
+    selectedDiv.style.borderColor = 'black';
+  }
+  divElement.style.borderColor = 'rgb(43, 162, 201)';
+  selectedDiv = divElement;
+  zoom(image, imageUrl);
+}
+  </script>
+</html>

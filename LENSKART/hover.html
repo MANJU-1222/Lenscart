@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360-Degree Image Rotation</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 726px;
+            min-width: 320px;
+            margin: 0 auto;
+        }
+
+        .img-container {
+            border: 1px solid #ccc;
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0;
+            cursor: ew-resize;
+        }
+
+        .img360 {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+        }
+
+        img {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-container">
+            <div class="img360">
+                <img id="myImg" src="http://woosterwebdesign.com/experiments/images/car_slides/car_(4).jpg" alt="Rotating Image">
+            </div>
+        </div>
+        <div class="caption"></div>
+        <div id="preload-imgs"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var num = 36; // the total number of images
+            var currentImage = 4; // the initial image number
+            var imgElement = document.getElementById("myImg");
+
+            // Preload all the images into hidden div
+            for (var i = 1; i <= num; i++) {
+                var img = new Image();
+                img.src = 'http://woosterwebdesign.com/experiments/images/car_slides/car_(' + i + ').jpg';
+                document.getElementById('preload-imgs').appendChild(img);
+            }
+
+            // Function to change the image source
+            function changeImage(imgNum) {
+                imgElement.src = 'http://woosterwebdesign.com/experiments/images/car_slides/car_(' + imgNum + ').jpg';
+            }
+
+            // Function to handle image rotation on hover
+            function rotateImageOnHover(event) {
+                var rotationStep = 360 / num;
+                var hoverAngle = (event.offsetX / imgElement.clientWidth) * 360;
+                var imgNum = Math.round(hoverAngle / rotationStep) + 1;
+
+                if (imgNum < 1) {
+                    imgNum += num;
+                }
+                if (imgNum > num) {
+                    imgNum -= num;
+                }
+
+                changeImage(imgNum);
+            }
+
+            // Add hover event listener to the image container
+            document.querySelector(".img-container").addEventListener("mousemove", rotateImageOnHover);
+        });
+    </script>
+</body>
+</html>
